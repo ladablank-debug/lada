@@ -78,16 +78,23 @@ button{font:inherit}
 .room-card h3{font-family:var(--serif);font-size:40px;font-weight:400;margin:80px 0 12px}
 .room-card p{font-size:13px;line-height:1.6}
 
-.language-section{display:grid;grid-template-columns:1fr 1fr;padding:0}
-.language-panel{min-height:720px;padding:90px 7vw;position:relative;overflow:hidden}
-.visual-panel{background:#111;color:#fff}.music-panel{background:#f0f0eb;color:#111}
-.language-panel h2{font-size:clamp(50px,6vw,90px);line-height:.92;margin:25px 0 70px}
+.language-section{padding:0;background:#151515}
+.language-panel{min-height:720px;padding:110px 7vw;position:relative;overflow:hidden}
+.music-panel{background:#151515;color:#efeee9}
+.music-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 28%,rgba(255,255,255,.12),transparent 25%),linear-gradient(115deg,transparent 0 48%,rgba(255,255,255,.035) 48% 48.2%,transparent 48.2%);pointer-events:none}
+.language-panel h2{font-size:clamp(50px,7vw,108px);line-height:.88;margin:25px 0 70px;position:relative;z-index:1}
+.music-heading{display:grid;grid-template-columns:minmax(0,1fr) .7fr;gap:8vw;align-items:end;position:relative;z-index:1}
+.music-heading h2{margin-bottom:0}
+.music-panel .kicker{color:#aaa9a3;position:relative;z-index:1}
 .language-panel ul{list-style:none;padding:0;margin:0;border-top:1px solid currentColor}
 .language-panel li{padding:14px 0;border-bottom:1px solid currentColor;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
-.symbol-field{display:flex;gap:28px;font-size:34px;color:#666;margin-bottom:35px}
-.wave{height:60px;display:flex;gap:8px;align-items:center;margin-bottom:36px}
-.wave i{display:block;width:2px;background:#111;height:20%;animation:wave 1.8s ease-in-out infinite}
+.music-panel ul{display:grid;grid-template-columns:repeat(2,1fr);column-gap:7vw;margin-top:90px;position:relative;z-index:1}
+.music-panel li{border-color:rgba(239,238,233,.34);color:#d1d0ca}
+.wave{height:130px;display:flex;gap:clamp(8px,1vw,16px);align-items:center;margin-bottom:0;position:relative;z-index:1}
+.wave i{display:block;width:2px;background:#efeee9;height:20%;animation:wave 1.8s ease-in-out infinite}
 .wave i:nth-child(2){height:50%;animation-delay:.1s}.wave i:nth-child(3){height:85%;animation-delay:.2s}.wave i:nth-child(4){height:40%;animation-delay:.3s}.wave i:nth-child(5){height:100%;animation-delay:.4s}.wave i:nth-child(6){height:55%;animation-delay:.5s}.wave i:nth-child(7){height:75%;animation-delay:.6s}.wave i:nth-child(8){height:35%;animation-delay:.7s}.wave i:nth-child(9){height:60%;animation-delay:.8s}
+.music-orbit{position:absolute;width:min(62vw,880px);aspect-ratio:1;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-12%;top:-22%;animation:orbit 28s linear infinite;pointer-events:none}
+.music-orbit::after{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:#efeee9;left:13%;bottom:16%}
 @keyframes wave{50%{transform:scaleY(.45)}}
 
 .philosophy-section{background:#0b0b0b;text-align:center;padding-top:170px;padding-bottom:170px}
@@ -126,7 +133,7 @@ footer{margin-top:120px;padding-top:22px;border-top:1px solid #333;display:flex;
   .statement-grid,.therapy-section,.rooms-heading,.language-section,.project-heading{grid-template-columns:1fr}
   .statement-grid{gap:32px}.therapy-section{padding-top:100px}.album-art{width:min(82vw,540px)}
   .rooms{grid-template-columns:1fr}.room-card{border-right:0;border-bottom:1px solid #999;min-height:auto}.room-card h3{margin-top:30px}
-  .language-panel{min-height:auto}
+  .language-panel{min-height:auto}.music-heading{grid-template-columns:1fr}.music-panel ul{margin-top:60px}.music-orbit{width:100vw;right:-45%;top:8%}
   .facts div{grid-template-columns:1fr}
 }
 @media(max-width:560px){
@@ -134,7 +141,7 @@ footer{margin-top:120px;padding-top:22px;border-top:1px solid #333;display:flex;
   .hero-copy{padding-left:24px}.hero h1{font-size:92px}.hero-line{font-size:29px}
   .statement-copy{font-size:16px}.therapy-section{gap:50px}
   .album-copy h2{font-size:86px}.album-copy .lead{font-size:27px}
-  .language-panel{padding:80px 22px}
+  .language-panel{padding:80px 22px}.music-heading{gap:40px}.music-panel ul{grid-template-columns:1fr;gap:0}
   .modal{padding:50px 25px}.modal h2{font-size:45px}
   footer{gap:20px;flex-direction:column}
 }
