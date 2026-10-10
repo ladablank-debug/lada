@@ -27,7 +27,7 @@ button{font:inherit}
 .brand-mark{display:grid;place-items:center;width:36px;height:36px;border:1px solid #fff;border-radius:50%;font-family:var(--serif);font-size:14px}
 .site-nav{display:flex;gap:28px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
 .site-nav a{opacity:.7;transition:.3s}.site-nav a:hover{opacity:1}
-.menu-toggle{display:none;background:none;border:0;color:#fff;width:40px;height:40px}
+.menu-toggle{display:none;position:relative;background:none;border:0;color:#fff;width:40px;height:40px}
 .menu-toggle span:not(.sr-only){display:block;width:24px;border-top:1px solid #fff;margin:6px auto}
 
 .hero{min-height:min(100vh,900px);min-height:min(100svh,900px);display:grid;grid-template-columns:1.05fr .95fr;position:relative;overflow:hidden;background:linear-gradient(110deg,#050505 0 48%,#171717 100%)}
@@ -157,8 +157,9 @@ footer{margin-top:120px;padding-top:22px;border-top:1px solid #333;display:flex;
 
 @media(max-width:900px){
   .site-header{padding:18px 22px}
-  .site-nav{position:fixed;inset:0;background:#080808;display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:var(--serif);font-size:40px;transform:translateY(-100%);transition:.45s}
-  .site-nav.open{transform:none}.menu-toggle{display:block;z-index:2}
+  .site-nav{position:fixed;inset:0;z-index:1;background:rgba(8,8,8,.98);display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;gap:22px;padding:112px 28px 40px;font-family:var(--serif);font-size:clamp(30px,9vw,40px);line-height:1.1;transform:translateY(-100%);visibility:hidden;pointer-events:none;transition:transform .45s ease,visibility 0s linear .45s}
+  .site-nav.open{transform:translateY(0);visibility:visible;pointer-events:auto;transition:transform .45s ease}.menu-toggle{display:block;z-index:2}
+  body.menu-open{overflow:hidden}
   .hero{grid-template-columns:1fr}.hero-copy{position:absolute;inset:0;justify-content:flex-start;padding-top:18vh;z-index:5}.hero-portrait-wrap{grid-column:1;min-height:100vh;min-height:100svh;height:100vh;height:100svh}.hero-portrait{width:100vw;height:100vh;height:100svh;object-position:center 16%;opacity:.55}.hero-line{margin-top:auto}.vertical-code{display:none}
   .statement-grid,.therapy-section,.rooms-heading,.language-section,.project-heading{grid-template-columns:1fr}
   .statement-grid{gap:32px}.therapy-section{padding-top:100px}.album-art{width:min(82vw,540px)}
