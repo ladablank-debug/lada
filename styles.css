@@ -30,7 +30,7 @@ button{font:inherit}
 .menu-toggle{display:none;background:none;border:0;color:#fff;width:40px;height:40px}
 .menu-toggle span:not(.sr-only){display:block;width:24px;border-top:1px solid #fff;margin:6px auto}
 
-.hero{min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1.05fr .95fr;position:relative;overflow:hidden;background:linear-gradient(110deg,#050505 0 48%,#171717 100%)}
+.hero{min-height:min(100vh,900px);min-height:min(100svh,900px);display:grid;grid-template-columns:1.05fr .95fr;position:relative;overflow:hidden;background:linear-gradient(110deg,#050505 0 48%,#171717 100%)}
 .hero-copy{display:flex;flex-direction:column;justify-content:center;padding:14vh 6vw 8vh 8vw;position:relative;z-index:3}
 .eyebrow,.kicker{font-size:11px;letter-spacing:.24em;text-transform:uppercase}
 .eyebrow{color:#c7c7c1;margin:0 0 38px}
@@ -40,7 +40,7 @@ button{font:inherit}
 .text-link{display:inline-flex;align-items:center;gap:18px;width:max-content;border-bottom:1px solid #555;padding-bottom:9px;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
 .text-link-arrow{display:inline-flex;width:22px;height:22px;align-items:center;justify-content:center;color:#fff}
 .text-link-arrow svg{width:22px;height:22px;display:block;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:square;stroke-linejoin:miter}
-.hero-portrait-wrap{position:relative;min-height:100vh;min-height:100svh;height:100vh;height:100svh;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.hero-portrait-wrap{position:relative;min-height:0;height:100%;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
 .hero-portrait{display:block;width:min(47vw,760px);max-width:none;height:88vh;height:min(88vh,760px);object-fit:cover;object-position:center 18%;filter:grayscale(1) contrast(1.07);z-index:2;mask-image:linear-gradient(to bottom,#000 80%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 80%,transparent 100%)}
 .halo{position:absolute;width:48vw;height:48vw;max-width:760px;max-height:760px;border:1px solid rgba(255,255,255,.18);border-radius:50%;top:14%;left:12%;box-shadow:0 0 100px rgba(255,255,255,.05)}
 .vertical-code{position:absolute;right:2vw;top:50%;writing-mode:vertical-rl;font-size:9px;letter-spacing:.28em;color:#aaa;z-index:4}
